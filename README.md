@@ -46,20 +46,20 @@ The project also includes a simple utility to get a position from 2 proximity se
 #include "Fields.h"
 using namespace Fields;
 
-Fields::DepthSensor xSensor = Fields::makeSensor(4, 11);
-Fields::DepthSensor ySensor = Fields::makeSensor(8, 9);
+Fields::DepthSensor xSensor = makeSensor(4, 11);
+Fields::DepthSensor ySensor = makeSensor(8, 9);
 
 void setup() {
-    xSensor = Fields::makeSensor(4, 11);
-    ySensor = Fields::makeSensor(8, 9);
+    xSensor = makeSensor(4, 11);
+    ySensor = makeSensor(8, 9);
 }
 
 void loop() {
     Serial.print("x: ");
-    Serial.println(Fields::readSensor(xSensor));
+    Serial.println(readSensor(xSensor));
 
     Serial.print("y: ");
-    Serial.println(Fields::readSensor(ySensor));
+    Serial.println(readSensor(ySensor));
 }
 ```
 
