@@ -22,6 +22,22 @@ arm = {
     ServoInfo{ makeServo(5), 170.0 / 180.0, 0, 50 }, 11.7,
     ServoInfo{ makeServo(6), 250.0 / 180.0, 0, 180 }, 20.0,
 };
+
+void loop() {
+    Position pos = {rand(0, 30), 0, rand(0, 30)};
+
+    if (moveArm(arm, &pos)) {
+        delay(600);        
+
+    } else {
+        Serial.print("Could not move to ");
+        Serial.print(pos.x);
+        Serial.print(";");
+        Serial.print(pos.y);
+        Serial.print(";");
+        Serial.println(pos.z);
+    }
+}
 ```
 
 The project also includes a simple utility to get a position from 2 proximity sensors, `Fields`:

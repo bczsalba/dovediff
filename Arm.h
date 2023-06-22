@@ -68,7 +68,7 @@ void solveForeAndUpper(
     *out_q2 = q2;
 }
 
-bool moveArm(Arm arm, Position pos, size_t time, size_t step_count = 10) {
+bool moveArm(Arm arm, Position pos) {
     float adj = pos.x;
     float opp = pos.z;
     float hyp = sqrt(sq(adj) + sq(opp));
